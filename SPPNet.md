@@ -24,4 +24,5 @@ In the detection algorithm, a window is given in the image domain, and author ue
 
 They design a Spp-Net as shown below:
 <img src="https://img-blog.csdn.net/20150710160322260" width="70%">
+
 They apply three different pooling layer to the feature map (conv5). Assert the size of feature map is CxHxW, they use a maxpooling with size of HxW, a maxpooling with size of (H/4)x(W/4) and a maxpooling with size of (H/16)x(W/16), so they get three maxtric with size of Cx1, Cx4 (Actually, they get a matric with size of Cx2x2, and they post-operate to get Cx4 vector. In pytorch, we can use tensor.view(C,-1)) and a maxtric with size of Cx16. They concatenate them together and they get a matric with size of Cx(1+4+16), so they get a definitive size input for the fc layer.
