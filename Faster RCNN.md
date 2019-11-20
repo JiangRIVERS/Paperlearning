@@ -19,4 +19,4 @@ Faster R-CNN是一个end-to-end模型，one-stage。
 
 Faster R-CNN流程
 
-<img src="https://img-blog.csdn.net/20180304220940218" width="80%">
+<img src="https://img-blog.csdn.net/20180304220940218" width="90%">
