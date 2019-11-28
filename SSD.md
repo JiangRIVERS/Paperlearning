@@ -13,3 +13,5 @@ bounding box概念：网络预测结果。bounding box 中心点坐标（x',y',h
 ground-truth 中心点坐标为(x,y,h,w),训练使得(a1,a2,a3,a4)(x',y',h',w')+(b1,b2,b3,b4)=(x,y,h,w).
 
 bounding box 回归
+
+通过KKT条件构建分类和回归的损失函数。
