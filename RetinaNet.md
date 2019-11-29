@@ -13,4 +13,9 @@ In the above y ∈ {±1} specifies the ground-truth class and p ∈ [0, 1] is th
 CE(pt)=-log(pt)
 
 2. Balanced CE Loss：对正样本的损失值使用权重因子ɑ ∈ [0,1]，对负样本使用权重因子1-ɑ，从数量角度平衡了正负样本的损失值。
-CE(pt)=-ɑtlog(pt)
+CE(pt)=-ɑtlog(pt)。
+
+###Focal Loss
+Balanced CE Loss虽然人为设计了正负样本损失的权重，加大正样本的权重，减少负样本的权重。然而在正样本中仍然可能存在较易分的物体，负样本中仍可能存在较难分类的物体。
+于是作者提出Focal Loss，基于分类难易程度来分配权重。
+Focal Loss降低了容易分类样本的权重，从而使损失更关注在难分类的样本上。
