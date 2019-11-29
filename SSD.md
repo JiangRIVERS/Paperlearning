@@ -1,8 +1,8 @@
-##SSD
+## SSD
 
 This paper presents the first deep network based object detector that does not resample pixels or features for bounding box hypotheses and is as accurate as approaches that do.
 
-###基本思想：
+### 基本思想：
 无需预先提出RP，网络直接预测输出物体的类别概率和位置坐标，即我们的网络是统一的网络，经过单次检测即可直接得到最终的检测结果，俗称(one-stage检测)。
 
 SSD特征提取网络没有FC层
