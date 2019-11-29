@@ -9,3 +9,8 @@
 ###Related Work
 1. Cross-Entropy Loss：在但阶段物体检测器中，它会被大量的容易分类的样本控制，导致少量的不容易分类的样本被淹没。
 pt=p if y==1 else (1-p)
+In the above y ∈ {±1} specifies the ground-truth class and p ∈ [0, 1] is the model’s estimated probability for the class with label y = 1.
+CE(pt)=-log(pt)
+
+2. Balanced CE Loss：对正样本的损失值使用权重因子ɑ ∈ [0,1]，对负样本使用权重因子1-ɑ，从数量角度平衡了正负样本的损失值。
+CE(pt)=-ɑtlog(pt)
