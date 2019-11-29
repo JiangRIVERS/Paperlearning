@@ -18,4 +18,15 @@ CE(pt)=-ɑtlog(pt)。
 ###Focal Loss
 Balanced CE Loss虽然人为设计了正负样本损失的权重，加大正样本的权重，减少负样本的权重。然而在正样本中仍然可能存在较易分的物体，负样本中仍可能存在较难分类的物体。
 于是作者提出Focal Loss，基于分类难易程度来分配权重。
+
 Focal Loss降低了容易分类样本的权重，从而使损失更关注在难分类的样本上。
+
+<img src="https://img-blog.csdn.net/20170810081459842?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxNDM4MDE2NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="80%">
+
+以上提到的Focal Loss将重点放在了分类的难易程度上，对于难分类的物体，损失大；对于易分类的物体，损失小。
+
+接下来，论文将Focal Loss加以改进，从而解决针对正负样本不均衡的情况
+
+<img src="https://upload-images.jianshu.io/upload_images/11208523-d10deb2fe84f0b7d.png?imageMogr2/auto-orient/strip|imageView2/2" width="50%">
+
+ɑt为固定值，不参与训练。
