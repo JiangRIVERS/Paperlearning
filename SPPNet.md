@@ -1,9 +1,9 @@
-#SPPNet
-##Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
+# SPPNet
+## Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
 An improvement network based on RCNN
-##Promblem with RCNN
+## Promblem with RCNN
 + Large amount of calculation
-##Solution
+## Solution
 To solve the promblem RCNN exists, authors propose a pipeline as shown below:
 
 <img src="https://img-blog.csdn.net/20150710153716157" width="80%">
@@ -16,11 +16,11 @@ This method face two challenge:
 
 + How to relocate the ROI on the corresponding place of feature map
 + The fc layers demand fixed-length vectors as inputs. How to design a network to let the output of this network have the same size when ROI on feature map are always in different size.
-###For question one: 
+### For question one: 
 
 In the detection algorithm, a window is given in the image domain, and author ues it to crop the convolutional feature map which have been sub-sampled several times.So author need to align the window on the feature maps. In their implementation, they project the corner point of a window onto a pixel in the feature maps, suchthat this corner point in the image domain is closest to the center of the receptive file of that feature map pixel. They set the padding to kernel size/2, so the left (top) boundary x'=[x/stride]+1, the right (bottom) boundary x'=[x/stride]-1.
 
-###For question two:
+### For question two:
 
 They design a Spp-Net as shown below:
 <img src="https://img-blog.csdn.net/20150710160322260" width="70%">
