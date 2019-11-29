@@ -16,4 +16,6 @@ bounding box 回归
 
 通过KKT条件构建分类和回归的损失函数。
 
-RP（Region propose）框指的是网络输出的预测值（IOU大于某一阈值的部分），bounding boxes指的是经过边框回归后修正的RP框
+ RP（Region propose）框指的是网络输出的预测值（IOU大于某一阈值的部分），bounding boxes指的是经过边框回归后修正的RP框
+
+RP框的选取：论文中公式选取anchor大小及默认设置的aspect ratio
