@@ -6,8 +6,8 @@ DSMM是Deep Structured Semantic Model 的缩写。核心思想是将query和doc�
 <img src="https://pic1.zhimg.com/v2-da282bca52d5144ff17af5f8e30b9dd4_r.jpg" width="100%">
 
 + 使用tanh作为输出层和隐藏层的激活函数。
-
 + 使用R(Q,D)=consine(yQ,yD)来计算query与doc的语义向量的相关性分数。
++ 针对同一个query的正例和J个反例的相关性分数使用softmax，再使用loss计算损失
 + 缺点是输入的term向量使用的是one-hot编码，词典大小过大
 
 ## word hashing
