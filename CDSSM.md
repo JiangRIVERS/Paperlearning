@@ -4,6 +4,8 @@
 
 ## 核心
 
++ 改变word embedding方式: letter-tri-gram + word-tri-gram (如果是中文则不需要分词，因为中文量太大)
+
 + 将DSSM中的全连接换成卷积
 
 + 引入了Max-pooling
