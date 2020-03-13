@@ -1,6 +1,8 @@
 # FaceNet
 
-感谢：https://zhuanlan.zhihu.com/p/24837264
+[感谢](https://zhuanlan.zhihu.com/p/24837264)
+
+[代码参考](https://github.com/tbmoon/facenet/blob/master/train.py)
 
 
 ## 核心
@@ -25,6 +27,7 @@
 <img src="https://pic4.zhimg.com/80/v2-fb0de06aa80bfd4bb6eb9a24f9855c6b_720w.png" width="80%">
 
 <img src="https://pic3.zhimg.com/80/v2-89f6cb30446edc2f7748ed0541d1aeba_720w.png" width="60%">
+其中 [x]_+ 为取正函数，相当于max{x,0}
 
 ## Triplets 选取
 选择大样本的mini-batch，每个mini-batch中，对单个个体选择40张人脸图片作为正例，随机筛选其他人脸图片作为负样本。
