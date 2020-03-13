@@ -30,10 +30,20 @@
 其中 [x]_+ 为取正函数，相当于max{x,0}
 
 ## Triplets 选取
-选择大样本的mini-batch，每个mini-batch中，对单个个体选择40张人脸图片作为正例，随机筛选其他人脸图片作为负样本。
+选择大样本的mini-batch，每个mini-batch中，对单个个体选择40张中人脸图片作为正例，随机筛选其他人脸图片作为负样本。
 筛选负样本采用如下公式：
 
 <img src="https://pic3.zhimg.com/80/v2-2af5cd0d92a4ab587cf44db2b463241a_720w.png" width="80%">
 
 ## Embedding 维度对实验结果的影响
 <img src="https://pic2.zhimg.com/80/v2-41167c2bea4fd3602bcbbf68f5d8eb01_720w.png" width="80%">
+
+## 代码
+在浏览完代码后，总结出大致算法流程
+1. 制作数据集
++ 数据集是个list，包含n个triplets
++ 每个triplet包含3个图像，其一是某类别的图像，其二是positive，其三是其他类的negative
+2. 跑模型
++ embedding每个triplet中三个图像，每个triplets得到三个embedding
++ 计算neg和原图的距离是否大于pos和原图距离，若是，则视为hard neg，可以使用
++ 对hard neg的triplets计算Loss
