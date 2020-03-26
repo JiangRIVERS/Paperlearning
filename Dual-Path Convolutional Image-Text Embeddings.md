@@ -18,4 +18,5 @@ instance-level的图文互搜
 对于文本侧同样使用CNN，输入网络前对文本进行word2vector
 
 ## 总结
-文章主要解决了一个细粒度图文互搜的问题。文章有两个创新点，第一是使用CNN对文本word2vector结果进行卷积，而不是LSTM。第二是提出Instance loss。作者提出当前图文互搜不是细粒度，一个文本可能对应多个图片，Ranking loss只解决了图片与文本之间的相似度问题，而对图片与图片间，文本与文本间之间差别的区分没有帮助。于是作者将数据集中一张img+五个text视为一类，总共29000类，==对每类进行标注==。在stageI分别训练img CNN和text CNN，将img fc 和 text fc 经过一个共享权重的W层(共享是为了将img和text映射到同一语义空间中)后分别和label类计算CrossEntropy，回传，解决图与图之间、文本与文本之间相似度。stageII将img fc和text fc进行ranking loss，回传，解决图与文本之间相似度。
+文章主要解决了一个细粒度图文互搜的问题。文章有两个创新点，第一是使用CNN对文本word2vector结果进行卷积，而不是LSTM。第二是提出Instance loss。作者提出当前图文互搜不是细粒度，一个文本可能对应多个图片，Ranking loss只解决了图片与文本之间的相似度问题，而对图片与图片间，文本与文本间之间差别的区分没有帮助。于是作者将数据集中一张img+五个text视为一类，总共29000类，==无需对每类进行标注，每个img+5text的pair是单独的一类==。在stageI分别训练img CNN和text CNN，将img fc 和 text fc 经过一个共享权重的W层(共享是为了将img和text映射到同一语义空间中)后分别和label类计算CrossEntropy，回传，解决图与图之间、文本与文本之间相似度。stageII将img fc和text fc进行ranking loss，回传，解决图与文本之间相似度。
+
